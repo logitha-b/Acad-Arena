@@ -39,39 +39,6 @@ const values = [
   },
 ];
 
-const team = [
-  {
-    name: "Priya Sharma",
-    role: "Co-Founder & CEO",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
-    bio: "Former Product Lead at Google, IIT Delhi alumna"
-  },
-  {
-    name: "Rahul Verma",
-    role: "Co-Founder & CTO",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
-    bio: "Ex-Amazon engineer, BITS Pilani alumnus"
-  },
-  {
-    name: "Ananya Patel",
-    role: "Head of Operations",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop",
-    bio: "MBA from IIM Ahmedabad, 8+ years in EdTech"
-  },
-  {
-    name: "Arjun Kapoor",
-    role: "Head of Growth",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop",
-    bio: "Previously at Unacademy, NIT Trichy alumnus"
-  },
-];
-
-const milestones = [
-  { year: "2021", title: "Founded", description: "Started with 5 colleges and a dream" },
-  { year: "2022", title: "10K Users", description: "Reached our first 10,000 registered users" },
-  { year: "2023", title: "Series A", description: "Raised $5M to expand across India" },
-  { year: "2024", title: "50K+ Users", description: "Crossed 50,000 active users milestone" },
-];
 
 const About = () => {
   return (
@@ -147,74 +114,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* Our Story */}
-        <section className="py-20 bg-secondary/30">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Our <span className="gradient-text">Story</span>
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                AllCollegeEvent was born out of frustration. As students, we missed countless 
-                opportunities simply because we didn't know about them. We built this platform 
-                to ensure no student ever misses out on an opportunity that could change their life.
-              </p>
-            </div>
-
-            {/* Timeline */}
-            <div className="max-w-2xl mx-auto">
-              {milestones.map((milestone, index) => (
-                <div key={milestone.year} className="flex gap-6 mb-8 last:mb-0">
-                  <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-primary-foreground font-bold">
-                      {milestone.year}
-                    </div>
-                    {index < milestones.length - 1 && (
-                      <div className="w-0.5 h-full bg-border mt-2" />
-                    )}
-                  </div>
-                  <div className="pt-2">
-                    <h4 className="font-bold text-lg">{milestone.title}</h4>
-                    <p className="text-muted-foreground">{milestone.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Team */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Meet the <span className="gradient-text">Team</span>
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                We're a passionate team of educators, engineers, and entrepreneurs 
-                committed to transforming how students discover opportunities.
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-              {team.map((member) => (
-                <div key={member.name} className="text-center group">
-                  <div className="relative mb-4 inline-block">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-32 h-32 rounded-full object-cover mx-auto group-hover:scale-105 transition-transform"
-                    />
-                    <div className="absolute inset-0 rounded-full gradient-bg opacity-0 group-hover:opacity-20 transition-opacity" />
-                  </div>
-                  <h4 className="font-bold text-lg">{member.name}</h4>
-                  <p className="text-primary text-sm font-medium mb-1">{member.role}</p>
-                  <p className="text-sm text-muted-foreground">{member.bio}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* CTA */}
         <section className="py-20">
