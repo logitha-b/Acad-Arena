@@ -14,7 +14,387 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      event_bookmarks: {
+        Row: {
+          created_at: string | null
+          event_id: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          event_id: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          event_id?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "event_bookmarks_event_id_fkey"
+            columns: ["event_id"]
+            isOneToOne: false
+            referencedRelation: "events"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      event_ratings: {
+        Row: {
+          created_at: string | null
+          difficulty_rating: number | null
+          event_id: string
+          id: string
+          organization_rating: number | null
+          review: string | null
+          user_id: string
+          worth_rating: number | null
+        }
+        Insert: {
+          created_at?: string | null
+          difficulty_rating?: number | null
+          event_id: string
+          id?: string
+          organization_rating?: number | null
+          review?: string | null
+          user_id: string
+          worth_rating?: number | null
+        }
+        Update: {
+          created_at?: string | null
+          difficulty_rating?: number | null
+          event_id?: string
+          id?: string
+          organization_rating?: number | null
+          review?: string | null
+          user_id?: string
+          worth_rating?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "event_ratings_event_id_fkey"
+            columns: ["event_id"]
+            isOneToOne: false
+            referencedRelation: "events"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      event_registrations: {
+        Row: {
+          certificate_url: string | null
+          created_at: string | null
+          event_id: string
+          id: string
+          status: string | null
+          user_id: string
+        }
+        Insert: {
+          certificate_url?: string | null
+          created_at?: string | null
+          event_id: string
+          id?: string
+          status?: string | null
+          user_id: string
+        }
+        Update: {
+          certificate_url?: string | null
+          created_at?: string | null
+          event_id?: string
+          id?: string
+          status?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "event_registrations_event_id_fkey"
+            columns: ["event_id"]
+            isOneToOne: false
+            referencedRelation: "events"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      event_views: {
+        Row: {
+          event_id: string
+          id: string
+          user_id: string | null
+          viewed_at: string | null
+        }
+        Insert: {
+          event_id: string
+          id?: string
+          user_id?: string | null
+          viewed_at?: string | null
+        }
+        Update: {
+          event_id?: string
+          id?: string
+          user_id?: string | null
+          viewed_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "event_views_event_id_fkey"
+            columns: ["event_id"]
+            isOneToOne: false
+            referencedRelation: "events"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      events: {
+        Row: {
+          agenda: Json | null
+          category: string
+          college: string | null
+          created_at: string | null
+          current_attendees: number | null
+          date: string
+          description: string | null
+          end_date: string | null
+          end_time: string | null
+          id: string
+          image_url: string | null
+          is_completed: boolean | null
+          is_verified: boolean | null
+          location: string | null
+          max_attendees: number | null
+          mode: string | null
+          organizer_id: string
+          price: number | null
+          speakers: Json | null
+          time: string | null
+          title: string
+          updated_at: string | null
+          view_count: number | null
+        }
+        Insert: {
+          agenda?: Json | null
+          category: string
+          college?: string | null
+          created_at?: string | null
+          current_attendees?: number | null
+          date: string
+          description?: string | null
+          end_date?: string | null
+          end_time?: string | null
+          id?: string
+          image_url?: string | null
+          is_completed?: boolean | null
+          is_verified?: boolean | null
+          location?: string | null
+          max_attendees?: number | null
+          mode?: string | null
+          organizer_id: string
+          price?: number | null
+          speakers?: Json | null
+          time?: string | null
+          title: string
+          updated_at?: string | null
+          view_count?: number | null
+        }
+        Update: {
+          agenda?: Json | null
+          category?: string
+          college?: string | null
+          created_at?: string | null
+          current_attendees?: number | null
+          date?: string
+          description?: string | null
+          end_date?: string | null
+          end_time?: string | null
+          id?: string
+          image_url?: string | null
+          is_completed?: boolean | null
+          is_verified?: boolean | null
+          location?: string | null
+          max_attendees?: number | null
+          mode?: string | null
+          organizer_id?: string
+          price?: number | null
+          speakers?: Json | null
+          time?: string | null
+          title?: string
+          updated_at?: string | null
+          view_count?: number | null
+        }
+        Relationships: []
+      }
+      notifications: {
+        Row: {
+          created_at: string | null
+          id: string
+          is_read: boolean | null
+          message: string
+          related_id: string | null
+          title: string
+          type: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          is_read?: boolean | null
+          message: string
+          related_id?: string | null
+          title: string
+          type?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          is_read?: boolean | null
+          message?: string
+          related_id?: string | null
+          title?: string
+          type?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          bio: string | null
+          certificates_earned: number | null
+          city: string | null
+          college: string | null
+          created_at: string | null
+          display_name: string | null
+          events_attended: number | null
+          events_won: number | null
+          id: string
+          interests: string[] | null
+          is_verified_organizer: boolean | null
+          participation_points: number | null
+          preferred_mode: string | null
+          role: string | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          bio?: string | null
+          certificates_earned?: number | null
+          city?: string | null
+          college?: string | null
+          created_at?: string | null
+          display_name?: string | null
+          events_attended?: number | null
+          events_won?: number | null
+          id?: string
+          interests?: string[] | null
+          is_verified_organizer?: boolean | null
+          participation_points?: number | null
+          preferred_mode?: string | null
+          role?: string | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          bio?: string | null
+          certificates_earned?: number | null
+          city?: string | null
+          college?: string | null
+          created_at?: string | null
+          display_name?: string | null
+          events_attended?: number | null
+          events_won?: number | null
+          id?: string
+          interests?: string[] | null
+          is_verified_organizer?: boolean | null
+          participation_points?: number | null
+          preferred_mode?: string | null
+          role?: string | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      team_members: {
+        Row: {
+          id: string
+          joined_at: string | null
+          status: string | null
+          team_id: string
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          joined_at?: string | null
+          status?: string | null
+          team_id: string
+          user_id: string
+        }
+        Update: {
+          id?: string
+          joined_at?: string | null
+          status?: string | null
+          team_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "team_members_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: false
+            referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      teams: {
+        Row: {
+          created_at: string | null
+          created_by: string
+          description: string | null
+          event_id: string | null
+          id: string
+          is_active: boolean | null
+          max_members: number | null
+          skills_needed: string[] | null
+          title: string
+        }
+        Insert: {
+          created_at?: string | null
+          created_by: string
+          description?: string | null
+          event_id?: string | null
+          id?: string
+          is_active?: boolean | null
+          max_members?: number | null
+          skills_needed?: string[] | null
+          title: string
+        }
+        Update: {
+          created_at?: string | null
+          created_by?: string
+          description?: string | null
+          event_id?: string | null
+          id?: string
+          is_active?: boolean | null
+          max_members?: number | null
+          skills_needed?: string[] | null
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "teams_event_id_fkey"
+            columns: ["event_id"]
+            isOneToOne: false
+            referencedRelation: "events"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never

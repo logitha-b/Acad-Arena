@@ -3,6 +3,8 @@ import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
 import Categories from "@/components/Categories";
 import FeaturedEvents from "@/components/FeaturedEvents";
+import TrendingEvents from "@/components/TrendingEvents";
+import RecommendedEvents from "@/components/RecommendedEvents";
 import Testimonials from "@/components/Testimonials";
 import Partners from "@/components/Partners";
 import CTASection from "@/components/CTASection";
@@ -16,6 +18,8 @@ const Index = () => {
       <HowItWorks />
       <Categories />
       <FeaturedEvents />
+      <TrendingEvents />
+      <RecommendedEvents />
       <Testimonials />
       <Partners />
       <CTASection />
