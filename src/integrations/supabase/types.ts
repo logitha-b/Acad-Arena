@@ -159,6 +159,7 @@ export type Database = {
           description: string | null
           end_date: string | null
           end_time: string | null
+          external_id: string | null
           id: string
           image_url: string | null
           is_completed: boolean | null
@@ -168,6 +169,9 @@ export type Database = {
           mode: string | null
           organizer_id: string
           price: number | null
+          registration_link: string | null
+          source_name: string | null
+          source_url: string | null
           speakers: Json | null
           time: string | null
           title: string
@@ -184,6 +188,7 @@ export type Database = {
           description?: string | null
           end_date?: string | null
           end_time?: string | null
+          external_id?: string | null
           id?: string
           image_url?: string | null
           is_completed?: boolean | null
@@ -193,6 +198,9 @@ export type Database = {
           mode?: string | null
           organizer_id: string
           price?: number | null
+          registration_link?: string | null
+          source_name?: string | null
+          source_url?: string | null
           speakers?: Json | null
           time?: string | null
           title: string
@@ -209,6 +217,7 @@ export type Database = {
           description?: string | null
           end_date?: string | null
           end_time?: string | null
+          external_id?: string | null
           id?: string
           image_url?: string | null
           is_completed?: boolean | null
@@ -218,6 +227,9 @@ export type Database = {
           mode?: string | null
           organizer_id?: string
           price?: number | null
+          registration_link?: string | null
+          source_name?: string | null
+          source_url?: string | null
           speakers?: Json | null
           time?: string | null
           title?: string
