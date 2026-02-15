@@ -241,7 +241,7 @@ Deno.serve(async (req) => {
 
     let inserted = 0;
     let skipped = 0;
-    const SCRAPER_ID = "00000000-0000-0000-0000-000000000000";
+    // Use null organizer_id for scraped events (no auth user)
 
     for (const event of allEvents) {
       const { error } = await supabase.from("events").upsert(
@@ -259,7 +259,7 @@ Deno.serve(async (req) => {
           external_id: event.external_id,
           mode: event.mode,
           price: event.price,
-          organizer_id: SCRAPER_ID,
+          organizer_id: null,
           is_verified: true,
         },
         { onConflict: "external_id" }
