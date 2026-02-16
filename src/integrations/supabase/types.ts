@@ -14,6 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
+      colleges: {
+        Row: {
+          alpha_two_code: string | null
+          avg_difficulty_rating: number | null
+          avg_organization_rating: number | null
+          avg_worth_rating: number | null
+          city: string | null
+          country: string | null
+          created_at: string | null
+          domains: string[] | null
+          id: string
+          name: string
+          reputation_score: number | null
+          state_province: string | null
+          total_events: number | null
+          total_reviews: number | null
+          updated_at: string | null
+          website: string | null
+        }
+        Insert: {
+          alpha_two_code?: string | null
+          avg_difficulty_rating?: number | null
+          avg_organization_rating?: number | null
+          avg_worth_rating?: number | null
+          city?: string | null
+          country?: string | null
+          created_at?: string | null
+          domains?: string[] | null
+          id?: string
+          name: string
+          reputation_score?: number | null
+          state_province?: string | null
+          total_events?: number | null
+          total_reviews?: number | null
+          updated_at?: string | null
+          website?: string | null
+        }
+        Update: {
+          alpha_two_code?: string | null
+          avg_difficulty_rating?: number | null
+          avg_organization_rating?: number | null
+          avg_worth_rating?: number | null
+          city?: string | null
+          country?: string | null
+          created_at?: string | null
+          domains?: string[] | null
+          id?: string
+          name?: string
+          reputation_score?: number | null
+          state_province?: string | null
+          total_events?: number | null
+          total_reviews?: number | null
+          updated_at?: string | null
+          website?: string | null
+        }
+        Relationships: []
+      }
       event_bookmarks: {
         Row: {
           created_at: string | null
@@ -153,6 +210,7 @@ export type Database = {
           agenda: Json | null
           category: string
           college: string | null
+          college_id: string | null
           created_at: string | null
           current_attendees: number | null
           date: string
@@ -182,6 +240,7 @@ export type Database = {
           agenda?: Json | null
           category: string
           college?: string | null
+          college_id?: string | null
           created_at?: string | null
           current_attendees?: number | null
           date: string
@@ -211,6 +270,7 @@ export type Database = {
           agenda?: Json | null
           category?: string
           college?: string | null
+          college_id?: string | null
           created_at?: string | null
           current_attendees?: number | null
           date?: string
@@ -236,7 +296,15 @@ export type Database = {
           updated_at?: string | null
           view_count?: number | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "events_college_id_fkey"
+            columns: ["college_id"]
+            isOneToOne: false
+            referencedRelation: "colleges"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       notifications: {
         Row: {
@@ -330,6 +398,62 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      review_summaries: {
+        Row: {
+          avg_difficulty: number | null
+          avg_organization: number | null
+          avg_worth: number | null
+          common_feedback: string[] | null
+          cons: string[] | null
+          event_id: string
+          generated_at: string | null
+          id: string
+          pros: string[] | null
+          sentiment_label: string | null
+          sentiment_score: number | null
+          summary: string | null
+          total_reviews: number | null
+        }
+        Insert: {
+          avg_difficulty?: number | null
+          avg_organization?: number | null
+          avg_worth?: number | null
+          common_feedback?: string[] | null
+          cons?: string[] | null
+          event_id: string
+          generated_at?: string | null
+          id?: string
+          pros?: string[] | null
+          sentiment_label?: string | null
+          sentiment_score?: number | null
+          summary?: string | null
+          total_reviews?: number | null
+        }
+        Update: {
+          avg_difficulty?: number | null
+          avg_organization?: number | null
+          avg_worth?: number | null
+          common_feedback?: string[] | null
+          cons?: string[] | null
+          event_id?: string
+          generated_at?: string | null
+          id?: string
+          pros?: string[] | null
+          sentiment_label?: string | null
+          sentiment_score?: number | null
+          summary?: string | null
+          total_reviews?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "review_summaries_event_id_fkey"
+            columns: ["event_id"]
+            isOneToOne: true
+            referencedRelation: "events"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       team_members: {
         Row: {

@@ -14,6 +14,8 @@ import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import Leaderboard from "./pages/Leaderboard";
 import TeamFinder from "./pages/TeamFinder";
+import CollegeSearch from "./pages/CollegeSearch";
+import CollegeProfile from "./pages/CollegeProfile";
 import NotFound from "./pages/NotFound";
 import ChatBot from "./components/ChatBot";
 
@@ -37,6 +39,8 @@ const App = () => (
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/teams" element={<TeamFinder />} />
+            <Route path="/colleges" element={<CollegeSearch />} />
+            <Route path="/college/:id" element={<CollegeProfile />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

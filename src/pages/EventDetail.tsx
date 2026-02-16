@@ -22,6 +22,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import EventReviews from "@/components/EventReviews";
 
 const EventDetail = () => {
   const { id } = useParams();
@@ -171,6 +172,11 @@ const EventDetail = () => {
                 <p className="text-muted-foreground whitespace-pre-line leading-relaxed">
                   {event.description || "No description available for this event. Visit the registration page for more details."}
                 </p>
+              </div>
+
+              {/* Reviews Section */}
+              <div className="mt-6">
+                <EventReviews eventId={event.id} isCompleted={event.is_completed || false} />
               </div>
             </div>
 
