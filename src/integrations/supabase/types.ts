@@ -205,6 +205,47 @@ export type Database = {
           },
         ]
       }
+      event_winners: {
+        Row: {
+          college_name: string | null
+          created_at: string
+          event_id: string
+          id: string
+          position: number
+          team_name: string | null
+          updated_at: string
+          winner_name: string
+        }
+        Insert: {
+          college_name?: string | null
+          created_at?: string
+          event_id: string
+          id?: string
+          position?: number
+          team_name?: string | null
+          updated_at?: string
+          winner_name: string
+        }
+        Update: {
+          college_name?: string | null
+          created_at?: string
+          event_id?: string
+          id?: string
+          position?: number
+          team_name?: string | null
+          updated_at?: string
+          winner_name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "event_winners_event_id_fkey"
+            columns: ["event_id"]
+            isOneToOne: false
+            referencedRelation: "events"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       events: {
         Row: {
           agenda: Json | null
@@ -527,6 +568,56 @@ export type Database = {
             columns: ["event_id"]
             isOneToOne: false
             referencedRelation: "events"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      winner_projects: {
+        Row: {
+          created_at: string
+          demo_link: string | null
+          id: string
+          impact: string | null
+          problem_statement: string | null
+          project_title: string
+          repo_link: string | null
+          solution_summary: string | null
+          technologies: string[] | null
+          updated_at: string
+          winner_id: string
+        }
+        Insert: {
+          created_at?: string
+          demo_link?: string | null
+          id?: string
+          impact?: string | null
+          problem_statement?: string | null
+          project_title: string
+          repo_link?: string | null
+          solution_summary?: string | null
+          technologies?: string[] | null
+          updated_at?: string
+          winner_id: string
+        }
+        Update: {
+          created_at?: string
+          demo_link?: string | null
+          id?: string
+          impact?: string | null
+          problem_statement?: string | null
+          project_title?: string
+          repo_link?: string | null
+          solution_summary?: string | null
+          technologies?: string[] | null
+          updated_at?: string
+          winner_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "winner_projects_winner_id_fkey"
+            columns: ["winner_id"]
+            isOneToOne: false
+            referencedRelation: "event_winners"
             referencedColumns: ["id"]
           },
         ]

@@ -16,6 +16,7 @@ import Leaderboard from "./pages/Leaderboard";
 import TeamFinder from "./pages/TeamFinder";
 import CollegeSearch from "./pages/CollegeSearch";
 import CollegeProfile from "./pages/CollegeProfile";
+import Archive from "./pages/Archive";
 import NotFound from "./pages/NotFound";
 import ChatBot from "./components/ChatBot";
 
@@ -41,6 +42,7 @@ const App = () => (
             <Route path="/teams" element={<TeamFinder />} />
             <Route path="/colleges" element={<CollegeSearch />} />
             <Route path="/college/:id" element={<CollegeProfile />} />
+            <Route path="/archive" element={<Archive />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

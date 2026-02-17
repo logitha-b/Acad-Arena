@@ -23,6 +23,7 @@ const Navbar = () => {
     { name: "Leaderboard", path: "/leaderboard" },
     { name: "Teams", path: "/teams" },
     { name: "Colleges", path: "/colleges" },
+    { name: "Archive", path: "/archive" },
     { name: "Host Event", path: "/host" },
     { name: "About", path: "/about" },
   ];
