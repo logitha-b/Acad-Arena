@@ -42,6 +42,11 @@ const EventWinners = ({ eventId, isCompleted }: EventWinnersProps) => {
     return `${pos}th Place`;
   };
 
+  const formatUrl = (url: string) => {
+    if (!url) return "";
+    return url.startsWith("http") ? url : `https://${url}`;
+  };
+
   return (
     <div className="bg-card rounded-2xl p-6 md:p-8 card-shadow">
       <div className="flex items-center gap-2 mb-6">
@@ -98,7 +103,7 @@ const EventWinners = ({ eventId, isCompleted }: EventWinnersProps) => {
                     </div>
                   )}
 
-                  {project.technologies?.length > 0 && (
+                  {project.technologies && Array.isArray(project.technologies) && project.technologies.length > 0 && (
                     <div className="mb-3">
                       <p className="text-xs font-medium text-muted-foreground mb-1 flex items-center gap-1">
                         <Code className="w-3 h-3" /> TECHNOLOGIES
@@ -121,14 +126,14 @@ const EventWinners = ({ eventId, isCompleted }: EventWinnersProps) => {
                   <div className="flex gap-2 mt-3">
                     {project.demo_link && (
                       <Button variant="outline" size="sm" asChild>
-                        <a href={project.demo_link} target="_blank" rel="noopener noreferrer">
+                        <a href={formatUrl(project.demo_link)} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="w-3 h-3 mr-1" /> Live Demo
                         </a>
                       </Button>
                     )}
                     {project.repo_link && (
                       <Button variant="outline" size="sm" asChild>
-                        <a href={project.repo_link} target="_blank" rel="noopener noreferrer">
+                        <a href={formatUrl(project.repo_link)} target="_blank" rel="noopener noreferrer">
                           <Code className="w-3 h-3 mr-1" /> Source Code
                         </a>
                       </Button>
