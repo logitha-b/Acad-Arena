@@ -1,73 +1,197 @@
-# Welcome to your Lovable project
+🌐 Acad-Arena
+Discover • Compete • Collaborate • Showcase
 
-## Project info
+Acad-Arena is a smart student platform that aggregates real-time academic and technical events from colleges across the world. It helps students discover competitions, form teams, track participation, and showcase achievements — all in one place.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+🚀 Problem Statement
 
-## How can I edit this code?
+Students often miss valuable symposiums, hackathons, and competitions due to:
 
-There are several ways of editing your application.
+Scattered event information across multiple websites
 
-**Use Lovable**
+Difficulty finding teammates
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Lack of trust in event organizers
 
-Changes made via Lovable will be committed automatically to this repo.
+No centralized platform to track achievements
 
-**Use your preferred IDE**
+Acad-Arena solves these challenges by creating a unified ecosystem for event discovery and participation.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+✨ Key Features
+🔎 Real-Time Event Discovery
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Aggregates live events from trusted sources (Knowafest, Unstop, college portals)
 
-Follow these steps:
+Displays official college-hosted events
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Direct registration via college websites (no intermediaries)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+🏆 Participation & Achievement Tracker
 
-# Step 3: Install the necessary dependencies.
-npm i
+Number of events attended
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Participation certificates earned
 
-**Edit a file directly in GitHub**
+Events won
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+🤖 AI-Powered Recommendations
 
-**Use GitHub Codespaces**
+Personalized event suggestions based on past participation
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Most viewed & trending competitions
 
-## What technologies are used for this project?
+Smart filtering by interests
 
-This project is built with:
+🏅 Leaderboard System
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Ranks students based on participation and achievements
 
-## How can I deploy this project?
+Encourages healthy competition
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+🔔 Smart Reminders
 
-## Can I connect a custom domain to my Lovable project?
+1 day before event → “1 day to go”
 
-Yes, you can!
+1 hour before event → “1 hour to go”
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+🔍 College & Student Search
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Search colleges worldwide
+
+Discover student participation and achievements
+
+💬 Chatbot Assistant
+
+Helps users navigate the platform
+
+Answers queries about events and features
+
+❤️ Save & Bookmark Events
+
+Favorite events
+
+Personal dashboard: “My Interested Events”
+
+👥 Team Finder (Startup-Ready Feature)
+
+Post requirements: “Looking for 2 Python developers”
+
+Join teams within the platform
+
+🏫 College Reputation Score
+
+Popular colleges hosting events
+
+Organizer ratings & trust indicators
+
+⭐ Event Ratings & Reviews
+
+After events, users can rate:
+
+Organization
+
+Difficulty
+
+Overall value
+
+🏆 Winners & Project Showcase
+
+Archive of past event winners
+
+Project descriptions for learning & inspiration
+
+🏗️ System Architecture
+🌐 Frontend
+
+React / Next.js
+
+Responsive and dynamic UI
+
+Component-based architecture
+
+⚙️ Backend
+
+Node.js / Express
+
+API handling & real-time updates
+
+Scalable architecture
+
+🗄 Database
+
+MongoDB / PostgreSQL
+
+Stores users, events, teams, reviews, analytics
+
+🔗 APIs & Data Sources
+
+Knowafest
+
+Unstop
+
+Official college portals
+
+🤖 AI & Data Processing
+
+Recommendation engine
+
+Sentiment analysis for reviews
+
+Duplicate detection & validation
+
+📊 How It Works
+
+Fetch real events from trusted platforms
+
+Verify & normalize event data
+
+Display live events with official links
+
+Enable team formation & participation
+
+Collect reviews & archive winners
+
+Provide AI-based recommendations
+
+🎯 Impact
+
+Acad-Arena creates a trusted academic ecosystem by:
+
+Increasing student participation
+
+Promoting innovation and collaboration
+
+Helping students build strong portfolios
+
+Supporting transparency in event quality
+
+🛠️ Installation & Setup
+# Clone the repository
+git clone https://github.com/logitha-b/Acad-Arena.git
+
+# Navigate to project folder
+cd Acad-Arena
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+🔮 Future Enhancements
+
+Mobile app version
+
+AI skill-gap analysis
+
+Internship & research opportunity integration
+
+Blockchain-verified certificates
+
+👩‍💻 Author
+
+Logitha B
+Madhumitha E
+
+📜 License
+
+This project is developed for educational and innovation purposes.
